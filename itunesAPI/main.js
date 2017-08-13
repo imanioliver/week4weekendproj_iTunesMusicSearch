@@ -9,10 +9,12 @@ Here is a rough idea for the steps you could take:
 // 5. Create a way to listen for a click that will play the song in the audio play
 
 
+
 let searchForm = document.querySelector('#search-form');
 let results= document.getElementById('results');
 let audioTag= document.getElementsByTagName('audio');
 let thePlayer= document.querySelector('.player');
+
 
 
 console.log(results);
@@ -54,23 +56,28 @@ searchForm.addEventListener('submit', function(event){
                 results.appendChild(box);
                 box.appendChild(boxButton);
 
+                data.results[i].previewUrl
+
                 //add the event listener in this for loop so that you can reference the data being pulled in by the artist.
 
                 // console.log(data.results[i].previewUrl);
-                function noiseMaker () {
 
-                };
+
                 boxButton.addEventListener ('click', function(event){
-                    for (var j = 0; j < data.results[j].length; j++) {
-                        event.preventDefault();
-                        console.log(audioTag);
-                        console.log(thePlayer);
-                        console.log(data.results[i].previewUrl, "this should show the played songs url ");
-                        console.log(audioTag.src);
+                    // for (var j = 0; j < data.results[i].length; j++) {
+                        // event.preventDefault();
+                        // console.log(audioTag);
+                        // console.log(thePlayer);
+                        // console.log(data.results[i].previewUrl, "this should show the played songs url ");
+                        // console.log(audioTag.src);
 
-                    }
-                    // thePlayer.innerHTML=`<audio class="music-player" controls="controls" src="${data.results[i].previewUrl"></audio>`
-                })
+
+                    // }
+
+
+                });
+
+                thePlayer.innerHTML=`<audio class="music-player" controls src=${data.results[i].previewUrl}></audio>`
             }
 
             //if statement showing: "if there are no results, it will return that there are no results matching your search
