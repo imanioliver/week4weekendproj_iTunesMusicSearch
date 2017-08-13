@@ -63,21 +63,18 @@ searchForm.addEventListener('submit', function(event){
                 // console.log(data.results[i].previewUrl);
 
 
-                boxButton.addEventListener ('click', function(event){
-                    // for (var j = 0; j < data.results[i].length; j++) {
-                        // event.preventDefault();
-                        // console.log(audioTag);
-                        // console.log(thePlayer);
-                        // console.log(data.results[i].previewUrl, "this should show the played songs url ");
-                        // console.log(audioTag.src);
+                boxButton.addEventListener ('click', function(){
+                    // event.preventDefault();
+                    // console.log(audioTag);
+                    // console.log(thePlayer);
+                    // console.log(data.results[i].previewUrl, "this should show the played songs url ");
+                    // console.log(audioTag.src);
 
-
-                    // }
-
+                    audioTag.setAttribute("src", `${data.results[i].previewUrl}`);
 
                 });
-
-                thePlayer.innerHTML=`<audio class="music-player" controls src=${data.results[i].previewUrl}></audio>`
+                //
+                // thePlayer.innerHTML=`<audio class="music-player" controls  onclick src=${data.results[i].previewUrl}></audio>`
             }
 
             //if statement showing: "if there are no results, it will return that there are no results matching your search
