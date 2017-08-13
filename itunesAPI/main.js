@@ -50,12 +50,14 @@ searchForm.addEventListener('submit', function(event){
 
 
                 boxButton.innerHTML+=`<div class="title">  ${data.results[i].trackName}</div>`;
-                boxButton.innerHTML+=`<a><img  src='${data.results[i].artworkUrl100}'> </a>`
+                boxButton.innerHTML+=`<div class='artistName'>${data.results[i].artistName}</div>`
+                boxButton.innerHTML+=`<a><img class='albumImage' src='${data.results[i].artworkUrl100}'></a>`
 
                 results.appendChild(box);
                 box.appendChild(boxButton);
 
                 //add the event listener in this for loop so that you can reference the data being pulled in by the artist.
+                console.log(data.results[i].previewUrl);
 
                 boxButton.addEventListener ('click', function(event){
 
@@ -63,8 +65,8 @@ searchForm.addEventListener('submit', function(event){
                     console.log(audioTag);
                     console.log(thePlayer);
                     // console.log(data.results[i].previewUrl, "this should show the played songs url ");
-                    thePlayer.innerHTML=`<audio class="music-player" controls="controls" src="${data.results[i].previewUrl}">
-                    </audio>`
+                    audioTag.currentSrc
+                    thePlayer.innerHTML=`<audio class="music-player" controls="controls" src=""></audio>`
                 })
 
 
