@@ -12,7 +12,7 @@ Here is a rough idea for the steps you could take:
 
 let searchForm = document.querySelector('#search-form');
 let results= document.getElementById('results');
-let audioTag= document.getElementsByTagName('audio');
+let audioTag= document.getElementsByTagName('audio')[0];
 let thePlayer= document.querySelector('.player');
 
 
@@ -39,42 +39,40 @@ searchForm.addEventListener('submit', function(event){
           response.json().then(function(data) {
             console.log("Here is the data:", data);
 
+
             for (var i = 0; i < data.results.length; i++) {
-                let box = document.createElement('div')
-                let boxButton= document.createElement('button')
-                //add a let variable here (maybe empty) for what ever (maybe not empty) the result is that is clicked
+                (function() {
+                    let box = document.createElement('div')
+                    let boxButton= document.createElement('button')
+                    let currentResult=data.results[i];
+                    //add a let variable here (maybe empty) for what ever (maybe not empty) the result is that is clicked
+                    // let songOfChoice =
+                    box.classList.add('box');
+                    boxButton.classList.add('boxButton');
 
-                // let songOfChoice =
+                    boxButton.innerHTML+=`<div class="title">  ${currentResult.trackName}</div>`;
+                    boxButton.innerHTML+=`<div class='artistName'>${currentResult.artistName}</div>`
+                    boxButton.innerHTML+=`<a><img class='albumImage' src='${currentResult.artworkUrl100}'></a>`
 
-                box.classList.add('box');
-                boxButton.classList.add('boxButton');
+                    results.appendChild(box);
+                    box.appendChild(boxButton);
+                    currentResult.previewUrl
+                    //add the event listener in this for loop so that you can reference the data being pulled in by the artist.
+                    // console.log(currentResult.previewUrl);
+                    boxButton.addEventListener ('click', function(){
+                        // event.preventDefault();
+                        // console.log(audioTag);
+                        // console.log(thePlayer);
+                        // console.log(currentResult.previewUrl, "this should show the played songs url ");
+                        // console.log(audioTag.src);
 
-                boxButton.innerHTML+=`<div class="title">  ${data.results[i].trackName}</div>`;
-                boxButton.innerHTML+=`<div class='artistName'>${data.results[i].artistName}</div>`
-                boxButton.innerHTML+=`<a><img class='albumImage' src='${data.results[i].artworkUrl100}'></a>`
+                        audioTag.setAttribute("src", `${currentResult.previewUrl}`);
+                        audioTag.setAttribute("autoplay", true);
+                        audioTag.setAttribute("loop", true);
 
-                results.appendChild(box);
-                box.appendChild(boxButton);
-
-                data.results[i].previewUrl
-
-                //add the event listener in this for loop so that you can reference the data being pulled in by the artist.
-
-                // console.log(data.results[i].previewUrl);
-
-
-                boxButton.addEventListener ('click', function(){
-                    // event.preventDefault();
-                    // console.log(audioTag);
-                    // console.log(thePlayer);
-                    // console.log(data.results[i].previewUrl, "this should show the played songs url ");
-                    // console.log(audioTag.src);
-
-                    audioTag.setAttribute("src", `${data.results[i].previewUrl}`);
-
-                });
-                //
+                    });
                 // thePlayer.innerHTML=`<audio class="music-player" controls  onclick src=${data.results[i].previewUrl}></audio>`
+                }());
             }
 
             //if statement showing: "if there are no results, it will return that there are no results matching your search
