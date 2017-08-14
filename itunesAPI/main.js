@@ -25,7 +25,7 @@ searchForm.addEventListener('submit', function(event){
     let query = document.getElementsByTagName('input');
 
     results.innerHTML = '';
-    fetch("https://itunes.apple.com/search?term="+ query[0].value + "&limit=25")
+    fetch("https://itunes.apple.com/search?term="+ query[0].value + "&limit=15")
     // Data is fetched and we get a promise.
     .then(
         // The promise returns a response from the server.
@@ -51,8 +51,8 @@ searchForm.addEventListener('submit', function(event){
                     boxButton.classList.add('boxButton');
 
                     boxButton.innerHTML+=`<div class="title">  ${currentResult.trackName}</div>`;
-                    boxButton.innerHTML+=`<div class='artistName'>${currentResult.artistName}</div>`
-                    boxButton.innerHTML+=`<a><img class='albumImage' src='${currentResult.artworkUrl100}'></a>`
+                    boxButton.innerHTML+=`<div class='artistName'>${currentResult.artistName}</div>`;
+                    boxButton.innerHTML+=`<img class='albumImage' src='${currentResult.artworkUrl100}'>`;
 
                     results.appendChild(box);
                     box.appendChild(boxButton);
