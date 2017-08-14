@@ -1,14 +1,119 @@
 body {
-  background-color: #60d9f1;
+  background-color: #white;
+  font-family: 'Pacifico', cursive;
+  font-family: 'Lalezar', cursive;
+  /*background-image: url(https://i.pinimg.com/736x/b0/5c/fd/b05cfd1cd103f205443bd69efd3e13b6--arte-tropical-tropical-vibes.jpg);*/
+  background-repeat: no-repeat;
+  background-position: center;
+  /*background-size: cover;*/
+
+
+}
+h1{
+    color: white;
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    background-image: url(https://image.freepik.com/free-vector/tropical-leaves-background_1114-290.jpg);
+
 }
 
+
+.container {
+    /*background-image: url(https://s-media-cache-ak0.pinimg.com/originals/30/ee/9b/30ee9b5f79bbabcb5464ccc63ac5042e.jpg);*/
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
 .results {
+
+    display: flex;
+    /*flex-direction: row;*/
+    flex-wrap: wrap;
+}
+
+
+.boxButton {
+    /*display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-style: solid;
+    border-color: black;
+    border-width: thin;
+    width: 200px;
+    height: 400px;
+    margin: 1%;
+    width: 22%;
+    font-style: normal;
+    font-size: 2em;
+    text-align: center;*/
+
+}
+
+
+
+.box {
     display: flex;
     flex-direction: row;
-    
+    /*background-color: purple;
+    width: 2%;
+    height: 20px;
+    margin: 20%;
+    padding: 20%;*/
+    font-size: 50pt;
+    border: solid;
+    border-color: black;
+    width: 100%;
 }
 
-button {
-    background-color: none;
+audio {
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
 
+    padding:5%;
+    width: 60%;
+    height: 80px;
+}
+
+
+section form {
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+    padding:5%;
+
+}
+
+input {
+
+    width: 60%;
+    height: 80px;
+}
+
+#formButton {
+    width: 20%;
+    height: 50px;
+
+}
+
+
+#results {
+    display: flex;
+    flex-direction: row;
+    /*flex-shrink: 1 1 40%;*/
+    flex-wrap: wrap;
+    width: 100%;
+    flex-flow: row;
+    background-image: url(https://image.freepik.com/free-vector/tropical-leaves-background_1114-290.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+#resultsContainer {
+    display: flex;
+    width: 100%;
+    border: solid;
+    border-color: pink;
 }

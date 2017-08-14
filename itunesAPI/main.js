@@ -25,7 +25,7 @@ searchForm.addEventListener('submit', function(event){
     let query = document.getElementsByTagName('input');
 
     results.innerHTML = '';
-    fetch("https://itunes.apple.com/search?term="+ query[0].value + "&limit=20")
+    fetch("https://itunes.apple.com/search?term="+ query[0].value + "&limit=25")
     // Data is fetched and we get a promise.
     .then(
         // The promise returns a response from the server.
@@ -68,7 +68,7 @@ searchForm.addEventListener('submit', function(event){
 
                         audioTag.setAttribute("src", `${currentResult.previewUrl}`);
                         audioTag.setAttribute("autoplay", true);
-                        audioTag.setAttribute("loop", true);
+                        // audioTag.setAttribute("loop", true);
 
                     });
                 // thePlayer.innerHTML=`<audio class="music-player" controls  onclick src=${data.results[i].previewUrl}></audio>`

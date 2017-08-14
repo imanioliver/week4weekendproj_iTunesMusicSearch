@@ -3,32 +3,40 @@
 <head>
   <title>iTunes Music Search</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Lalezar|Pacifico" rel="stylesheet">
 </head>
 <body>
   <div class="container">
         <header>
-          <h1>Imani's Top Tunes</h1>
+          <h1>feel the music</h1>
         </header>
 
         <section class="player">
             <audio class="music-player" controls src="">
             <!--  https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview62/v4/c9/72/34/c9723405-d365-766e-90d2-5d05faae6c5d/mzaf_2809895643550790977.plus.aac.p.m4a -->
+
+                <canvas id="canvas" width="300" height="300"></canvas>
                      <p>Your browser does not support HTML5 audio.</p>
+
              </audio>
        </section>
-
+<hr>
         <section class="search">
             <form id="search-form">
                 <input name="SearchArtist" placeholder="Search your favorite artists here!">
-                <button type="submit" name="Search" rows="12" cols="12" placeholder="Search"> Search</button>
+                <button id="formButton" type="submit" name="Search" rows="12" cols="12" placeholder="Search"> Search</button>
             </form>
         </section>
 
 <hr>
-        <section id="results">
+    <div id="resultsContainer">
+        <section id="results"></section>
+    </div>
 
-        </section>
   </div>
+
+
+
   <script src="main.js"></script>
 </body>
 </html>
